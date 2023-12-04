@@ -63,6 +63,27 @@ axios({
     console.error(error.toJSON());
   });
 
+asinc function f1() {
+  const res = await fetch('https://fortniteapi.io/v1/challenges')
+  return res.text();
+}
+asinc function f2() {
+  const res = await fetch('https://fortniteapi.io/v1/challenges')
+  return res.text();
+}
+asinc function f3() {
+  const res = await fetch('https://fortniteapi.io/v1/challenges')
+  return res.text();
+}
+asinc go(){
+  let a = await f1();
+  console.log(a);
+  let b = await f2()
+  console.log(b);
+  let c = await f3()
+  console.log(c);
+ }
+
 // axios
 //   .get('https://fortniteapi.io/v1/challenges', {
 //     params: { leng: 'ru', season: 'current' },
