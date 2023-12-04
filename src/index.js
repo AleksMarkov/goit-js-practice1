@@ -47,42 +47,86 @@ import axios from 'axios';
 //     console.log(error.config);
 //   });
 
-axios({
-  url: 'https://fortniteapi.io/v1/challenges',
-  params: {
-    lang: 'en',
-  },
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-  .then(responce => {
-    console.log(responce.data);
-  })
-  .catch(error => {
-    console.error(error.toJSON());
-  });
+// axios({
+//   url: 'https://fortniteapi.io/v1/challenges',
+//   params: {
+//     lang: 'en',
+//   },
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
+//   .then(responce => {
+//     console.log(responce.data);
+//   })
+//   .catch(error => {
+//     console.error(error.toJSON());
+//   });
 
-asinc function f1() {
-  const res = await fetch('https://fortniteapi.io/v1/challenges')
-  return res.text();
+async function f1() {
+  const res = axios
+    .get('https://fortniteapi.io/v1/challenges', {
+      params: { leng: 'ru', season: 'current' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'a72e4011-49fb1cd4-ee1bf19f-3f2ac52f',
+      },
+    })
+    .then(responce => {
+      console.log(responce.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  // const res = await fetch('https://fortniteapi.io/v1/challenges');
+  // return res.text();
+  // return res.data;
 }
-asinc function f2() {
-  const res = await fetch('https://fortniteapi.io/v1/challenges')
-  return res.text();
+async function f2() {
+  const res = axios
+    .get('https://fortniteapi.io/v1/challenges', {
+      params: { leng: 'ru', season: 'current' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'a72e4011-49fb1cd4-ee1bf19f-3f2ac52f',
+      },
+    })
+    .then(responce => {
+      console.log(responce.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  // const res = await fetch('https://fortniteapi.io/v1/challenges');
+  // return res.text();
 }
-asinc function f3() {
-  const res = await fetch('https://fortniteapi.io/v1/challenges')
-  return res.text();
+async function f3() {
+  const res = axios
+    .get('https://fortniteapi.io/v1/challenges', {
+      params: { leng: 'ru', season: 'current' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'a72e4011-49fb1cd4-ee1bf19f-3f2ac52f',
+      },
+    })
+    .then(responce => {
+      console.log(responce.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  // const res = await fetch('https://fortniteapi.io/v1/challenges');
+  // return res.text();
 }
-asinc go(){
+async function go() {
   let a = await f1();
   console.log(a);
-  let b = await f2()
+  let b = await f2();
   console.log(b);
-  let c = await f3()
+  let c = await f3();
   console.log(c);
- }
+}
+go();
 
 // axios
 //   .get('https://fortniteapi.io/v1/challenges', {
